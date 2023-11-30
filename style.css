@@ -128,6 +128,7 @@ nav {
 
 .lana-photo > div {
   display: flex;
+  box-shadow: 10px 10px 0px 0px rgb(221 208 80);
 }
 
 .black-bg {
