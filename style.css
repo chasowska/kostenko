@@ -4,6 +4,19 @@
   padding: 0;
   margin: 0;
   font-family: 'Jost', sans-serif;
+  scroll-behavior: smooth;
+  scroll-margin: 100px;
+}
+
+.sr-only {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+::selection {
+  background: #DDD060;
+  color: black;
 }
 
 body {
@@ -23,7 +36,7 @@ h2 {
   color: #D9D9D9;
 }
 
-.first-screen, .header-content {
+.first-screen, .header-content, .second-screen, .third-screen {
   max-width: 1230px;
   margin: 0 auto;
   width: 100%;
@@ -44,15 +57,6 @@ h2 {
   justify-content: space-between;
 }
 
-.header-content a:hover {
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-
-nav {
-
-}
-
 .nav-list {
   display: flex;
   gap: clamp(10px, 8vw, 128px);
@@ -61,25 +65,51 @@ nav {
 
 .nav-list a {
   color: white;
-  font-size: 20px;
+  font-size: 16px;
+  position: relative;
+}
+
+.nav-list-link::after {
+  content: '';
+  background: #DDD060;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  transform: scaleX(0);
+  transition: all 0.25s ease;
+}
+
+@media (hover: hover) {
+  .nav-list-link:hover {
+    color: #DDD060;
+  }
+
+  .nav-list-link:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 .lang {
   display: flex;
-  gap: 24px;
+  gap: 16px;
+}
+
+.lang a {
+  position: relative;
 }
 
 .lina-title {
   display: flex;
   justify-content: center;
-  margin: 100px 0;
+  margin: 120px 0;
 
 }
 
 .first-screen-content {
   display: flex;
   color: white;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -87,14 +117,18 @@ nav {
   flex: 1;
 }
 
-.first-screen-content-text {
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.first-screen-content-text p {
   padding-right: 100px;
 }
 
 .bibliography {
   max-width: 350px;
   margin: 30px auto;
-  border-left: #D9D9D9 2px solid;
+  border-left: #434343 2px solid;
   padding: 50px 0;
 }
 
@@ -131,7 +165,7 @@ nav {
 
 .lana-photo > div {
   display: flex;
-  box-shadow: 10px 10px 0px 0px rgb(221 208 80);
+  box-shadow: 6px 6px 0 0 rgb(221 208 80);
 }
 
 .black-bg {
@@ -141,6 +175,22 @@ nav {
   background: rgba(0, 0, 0, 0.75);
   display: flex;
   align-items: end;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+}
+
+.lana-photo:hover .black-bg {
+  transform: translateX(0);
+}
+
+.lana-photo:hover blockquote {
+  opacity: 1;
+}
+
+.lana-photo blockquote {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  transition-delay: 0.25s;
 }
 
 .lana-poem {
@@ -155,4 +205,195 @@ nav {
 .lana-poem footer {
   display: flex;
   justify-content: flex-end;
+}
+
+.text-center-1 p {
+  color: white;
+  max-width: 720px;
+  margin: 200px auto 250px;
+}
+
+.images-books {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+.images-books > div {
+  position: relative;
+}
+
+.images-books img:last-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.berestechko-before, .marusia-churai-before {
+  transition: all .25s ease;
+}
+
+.berestechko-before:hover, .marusia-churai-before:hover {
+  opacity: 0;
+}
+
+.text-center-2 p {
+  color: white;
+  max-width: 720px;
+  margin: 250px auto;
+}
+
+.poem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lina-photo2 {
+  box-shadow: -6px -6px 0 0 rgb(221 208 80);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+}
+
+.black-bg2 {
+  background: rgba(0, 0, 0, 0.75);
+  width: 56%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: end;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+}
+
+.lina-photo2:hover .black-bg2 {
+  transform: translateX(0);
+}
+
+.lina-photo2 p {
+  opacity: 0;
+  transition: opacity .25s ease;
+  transition-delay: .25s;
+}
+
+.lina-photo2:hover p {
+  opacity: 1;
+}
+
+.black-bg2 p {
+  color: white;
+  margin: auto 0 20px 20px;
+  font-size: 12px;
+}
+
+.poem-text {
+  color: white;
+  margin-left: 100px;
+}
+
+.poem-text p {
+  margin-top: 20px;
+}
+
+.quote-center {
+  color: white;
+  max-width: 720px;
+  margin: 200px auto;
+}
+
+.quote-center cite {
+  font-style: italic;
+}
+
+.quote-center footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.order-title {
+  display: flex;
+  justify-content: center;
+  margin: 250px 0 150px;
+}
+
+.order-content {
+  display: flex;
+  gap: 30px;
+}
+
+.order-form {
+  max-width: 600px;
+  height: 100%;
+  background-color: #0F0F0F;
+  border: 2px solid #050505;
+  box-shadow: 0 0 20px 6px rgb(0 0 0);
+  width: 100%;
+  margin-bottom: 100px;
+  padding: 60px;
+}
+
+.order-form-form > div {
+  margin: 36px 0;
+  display: flex;
+  gap: 5px;
+}
+
+.order-form-form select, .order-form-form input, .order-form-form textarea {
+  flex: 3;
+}
+
+
+label {
+  color: white;
+  flex: 1;
+}
+
+input, select, textarea {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.btn {
+  width: 130px;
+  height: 30px;
+  background-color: #DDD060;
+  color: #0F0F0F;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn:active {
+  color: #DDD060;
+  background-color: #0F0F0F;
+  border: 1px solid #DDD060;
+}
+
+.order-form-form > div:last-child {
+  display: flex;
+  justify-content: flex-end;
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+  width: 75%;
+  background-color: #4E4E4E;
+  border: none;
+  color: white;
+}
+
+.footer {
+  height: 225px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
 }
