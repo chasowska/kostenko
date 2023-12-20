@@ -14,8 +14,7 @@ of [Codecademy](https://www.codecademy.com/resources/blog/html-and-css-code-chal
 
 ### The first task within the challenge:
 
-1. Create a tribute page
-2. Choose a historical figure who’s meaningful to you and create a webpage dedicated to them. The
+**Create a tribute page.** Choose a historical figure who’s meaningful to you and create a webpage dedicated to them. The
    webpage should include:
 
 - A title or heading with the person’s name
@@ -32,7 +31,7 @@ of [Codecademy](https://www.codecademy.com/resources/blog/html-and-css-code-chal
 4. Use a `hover` effect with images and add `transition`.
 5. Create a simple animation with text in the navigation bar.
 6. Learn to style quotes.
-7. Create a small form, use inputs: `email`, `textarea`, `button`, `select`.
+7. Create a small form, use: `email input`, `textarea`, `button`, `select`.
 8. Create a duplicate of the site in Ukrainian and link the resulting HTML file to a language toggle
    button.
 
